@@ -7,20 +7,20 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity3 extends AppCompatActivity {
     boolean gameActive = true;
     // Player representation
     // 0 - X
     // 1 - O
     int activePlayer = 0;
-    int[] gameState = {2, 2 , 2, 2, 2, 2, 2, 2, 2};
+    int[] gameState = {2, 2, 2, 2, 2, 2, 2, 2, 2,2,2,2,2,2,2,2};
     //    State meanings:
     //    0 - X
     //    1 - O
     //    2 - Null
-    int[][] winPositions = {{0,1,2}, {3,4,5}, {6,7,8},
-            {0,3,6}, {1,4,7}, {2,5,8},
-            {0,4,8}, {2,4,6}};
+    int[][] winPositions = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,15},
+            {0,4,8,12}, {1,5,9,13}, {2,6,10,14},{3,7,11,15},
+            {0,5,10,15}, {3,6,9,12}};
     public void playerTap(View view){
         ImageView img = (ImageView) view;
         int tappedImage = Integer.parseInt(img.getTag().toString());
@@ -35,7 +35,8 @@ public class MainActivity2 extends AppCompatActivity {
                 activePlayer = 1;
                 TextView status = findViewById(R.id.status);
                 status.setText("O's Turn - Tap to play");
-            } else {
+            }
+            else {
                 img.setImageResource(R.drawable.o);
                 activePlayer = 0;
                 TextView status = findViewById(R.id.status);
@@ -84,6 +85,14 @@ public class MainActivity2 extends AppCompatActivity {
         ((ImageView)findViewById(R.id.imageView6)).setImageResource(0);
         ((ImageView)findViewById(R.id.imageView7)).setImageResource(0);
         ((ImageView)findViewById(R.id.imageView8)).setImageResource(0);
+        ((ImageView)findViewById(R.id.imageView9)).setImageResource(0);
+        ((ImageView)findViewById(R.id.imageView10)).setImageResource(0);
+        ((ImageView)findViewById(R.id.imageView11)).setImageResource(0);
+        ((ImageView)findViewById(R.id.imageView12)).setImageResource(0);
+        ((ImageView)findViewById(R.id.imageView13)).setImageResource(0);
+        ((ImageView)findViewById(R.id.imageView14)).setImageResource(0);
+        ((ImageView)findViewById(R.id.imageView15)).setImageResource(0);
+
         TextView status = findViewById(R.id.status);
         status.setText("X's Turn - Tap to play");
 
@@ -92,6 +101,6 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main3);
     }
 }
